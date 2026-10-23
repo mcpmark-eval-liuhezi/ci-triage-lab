@@ -1,0 +1,12 @@
+name: greet-ci
+on:
+  push:
+  pull_request:
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out code
+        uses: actions/checkout@v4
+      - name: Run greeting checks
+        run: python test_greet.py
